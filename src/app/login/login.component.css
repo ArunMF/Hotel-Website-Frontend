@@ -1,0 +1,29 @@
+#headerDiv{
+    height: 700px;
+    background-image: url(https://images.pexels.com/photos/2319426/pexels-photo-2319426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(30%); */
+    font-weight: 600;
+}
+#body{
+    height: 300px;
+}
+h2{
+    color: white;
+    font-size: 25px; 
+    font-family: 'Jost', sans-serif; 
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px black;
+}
+label{
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    text-shadow: 2px 2px 10px black;
+}
+input,button{
+    box-shadow: 2px 2px 10px black;
+}

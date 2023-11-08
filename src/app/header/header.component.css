@@ -1,0 +1,55 @@
+#header{
+    position: absolute; 
+    width: 100%;
+    font-weight: 600;
+    color: white;
+    z-index: 1;
+}
+#header h3{
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+#header h1{
+    font-family: 'Moon Dance', cursive;
+    font-size: 120px;
+    font-weight: 1000;
+    color: white;
+    text-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+#header p i{
+    font-size: 10px;
+    color: rgb(238, 255, 0);
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+#header p span{
+    font-size: 11px;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
+a{
+    text-decoration: none;
+    /* text-shadow: 4px 2px 10px black; */
+}
+.dropdown ul li a{
+    color: white;
+}
+.dropdown ul li a:hover{
+    color: black;
+}
+#checkAvButton{
+    color: white;
+    box-shadow: 2px 2px 10px black;
+}
+#checkAvButton:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}

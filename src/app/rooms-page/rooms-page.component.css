@@ -1,0 +1,29 @@
+#headerDiv{
+    height: 650px;
+    background-image: url(https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(30%); */
+    font-weight: 600;
+}
+
+#roomsList p span{
+    font-size: 16px;
+}
+#roomsList button{
+    color: rgb(255, 166, 0);
+    width: 130px;
+    border-bottom: 1px solid rgb(255, 166, 0);
+    font-size: 15px;
+}
+#roomsList img{
+    height: 350px;
+    width: 100%;
+}
+#roomImg:hover{
+    transform: scale(1.01);
+    transition: 1s;
+}
+#roomsList i{
+    color: rgb(255, 166, 0);
+}

@@ -1,0 +1,45 @@
+#headerDiv{
+    height: 800px;
+    background-image: url(https://images.pexels.com/photos/16541174/pexels-photo-16541174/free-photo-of-top-view-of-casa-demae-ii-puerto-vallarta-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: 600;
+}
+
+#activity1{
+    background-image: url(https://cozystay.loftocean.com/mountain-hotel/wp-content/uploads/sites/7/2023/05/img-18-3-550x826.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(70%); */
+}
+#activity2{
+    background-image: url(https://cozystay.loftocean.com/mountain-hotel/wp-content/uploads/sites/7/2023/05/img-19-2-550x825.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(70%); */
+}
+#activity3{
+    background-image: url(https://cozystay.loftocean.com/mountain-hotel/wp-content/uploads/sites/7/2023/04/img-20.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(70%); */
+}
+#activity4{
+    background-image: url(https://cozystay.loftocean.com/mountain-hotel/wp-content/uploads/sites/7/2023/04/img-21-550x826.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(70%); */
+}
+#activity1:hover, #activity2:hover, #activity3:hover, #activity4:hover{
+    /* background-size: 105%; */
+    transform: scale(1.01);
+    transition: 1s;
+}
+#activity1 h3,#activity2 h3,#activity3 h3,#activity4 h3{
+    margin-top: 300px;
+    margin-bottom: 0px;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+}

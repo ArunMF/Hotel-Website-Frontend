@@ -1,0 +1,50 @@
+#headerDiv{
+    height: 600px;
+    background-image: url(https://images.pexels.com/photos/4916129/pexels-photo-4916129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: grayscale(30%); */
+    font-weight: 600;
+}
+#body{
+    height: 300px;
+    margin-top: -50px;
+}
+#body h2{
+    color: white;
+    font-size: 25px; 
+    font-family: 'Jost', sans-serif; 
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px black;
+}
+#body label{
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    text-shadow: 2px 2px 10px black;
+}
+#body input,#body button{
+    box-shadow: 2px 2px 10px black;
+}
+#adminTable{
+    /* border: 1px solid greenyellow; */
+    /* margin: -30px; */
+    background-color: #121827;
+    color: white;
+}
+#adminTable .flex div{
+    width: 160px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    justify-content: center;
+    align-items: center;
+}
+#adminTable .flex div p,span{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+}

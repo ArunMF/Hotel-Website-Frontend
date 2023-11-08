@@ -1,0 +1,65 @@
+<div class="bg-info" id="headerDiv">
+
+        <div class="row" style="padding-top: 350px;">
+            <p class="text-center text-white" style="font-size: 72px; text-shadow: 2px 2px 20px rgb(0, 0, 0); font-family: 'Marcellus', serif;">Check Availability</p>
+            <!-- <p class="text-center text-white mt-4" style="font-size: 18px; text-shadow: 2px 2px 10px rgb(0, 0, 0);">Warmth. Care. Peace.</p> -->
+        </div>
+
+        <div class="p-1" style="margin-top: 100px;" id="checkAvail" *ngIf="!showResult">
+            <form [formGroup]="checkForm" (ngSubmit)="submitForm()" class="col d-flex justify-content-center">
+            <div class="form-floating me-2 w-25">
+                <input formControlName="checkInDate" name="checkInDate" type="date" class="form-control" id="floatingCheckIn" placeholder="Check In" required>
+                <label for="floatingCheckIn">Check In</label>
+              </div>
+              <div class="form-floating me-2 w-25">
+                <input formControlName="checkOutDate" name="checkOutDate" type="date" class="form-control" id="floatingCheckOut" placeholder="Check Out" required>
+                <label for="floatingCheckOut">Check Out</label>
+              </div>
+              <div class="form-floating me-2">
+                <input formControlName="noOfGuest" name="noOfGuest" type="number" class="form-control" id="floatingGuests" placeholder="Number of Guests" required>
+                <label for="floatingGuests">Guests</label>
+              </div>
+            <button class="btn border px-4" id="checkAvButton">Check Availability</button>
+            </form>
+        </div>
+      </div>
+
+<!-- Availability result -->
+<div class="row" id="result" style="background-color: #212529;" *ngIf="showResult">
+    <div class="col-4 p-5">
+        <form [formGroup]="checkForm" (ngSubmit)="submitForm()">
+        <div class="form-floating mb-3">
+            <input formControlName="checkInDate" name="checkInDate" type="date" class="form-control" id="floatingCheckIn" placeholder="Check In" [value]="checkInDate">
+            <label for="floatingCheckIn">Check In</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input formControlName="checkOutDate" name="checkOutDate" type="date" class="form-control" id="floatingCheckOut" placeholder="Check Out" [value]="checkOutDate">
+            <label for="floatingCheckOut">Check Out</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input formControlName="noOfGuest" name="noOfGuest" type="number" class="form-control" id="floatingGuests" placeholder="Number of Guests" [value]="noOfGuest">
+            <label for="floatingGuests">Guests</label>
+          </div>
+        <button class="btn border px-4 w-100" id="checkAvButton">Check Availability</button>
+        </form> 
+    </div>
+
+    <!-- Rooms result -->
+    <div class="col-8" id="roomsResult">
+        <div *ngFor="let room of allRooms">
+            <div class="row m-5" *ngIf="room.guests==noOfGuest">
+            <div class="col-4">
+                <div style="position: absolute;"><p class="bg-white m-3 p-2 w-75">FROM ${{room.price}}</p></div>
+                <img id="roomImg" [src]="room.thumbnail" alt="">
+            </div>
+            <div class="col-8">
+                <p class="mt-3 text-white" style="font-size: 36px; font-family: 'Marcellus', serif;">{{room.title}}</p>
+                <!-- <p class="mt-2" style="color: rgb(184, 107, 107); font-size: 14px;"><span class="mx-1">60m<sup>2</sup></span>/<span class="mx-1">Great Mountain View</span>/<span class="mx-1">4 Guests</span></p> -->
+                <p class="text-white mt-4" style="font-size: 22px;"><span class="me-4"><i class="fa-solid fa-retweet"></i> {{room.area}}m<sup>2</sup></span><span class="me-4"><i class="fa-solid fa-user-group"></i> {{room.guests}} Guests</span><span class="me-4"><i class="fa-solid fa-bed"></i> {{room.beds}} Beds</span><span class="me-4"><i class="fa-solid fa-toilet"></i> {{room.bathroom}} Bathroom</span></p>
+                <p class="text-white" style="font-size: 14px; text-align: justify;">{{room.description}}</p>
+                <button class="pb-2" routerLink="ViewRoom/{{room.id}}">Discover more <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

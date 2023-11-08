@@ -1,0 +1,238 @@
+<div class="bg-info" id="headerDiv">
+  <div class="row" style="padding-top: 430px;">
+    <p *ngIf="showBilling" class="text-center text-white"
+      style="font-size: 72px; text-shadow: 2px 2px 20px rgb(0, 0, 0); font-family: 'Marcellus', serif;">Checkout</p>
+    <!-- <p class="text-center text-white mt-4" style="font-size: 18px; text-shadow: 2px 2px 10px rgb(0, 0, 0);">Warmth. Care. Peace.</p> -->
+
+    <div class="row justify-content-center ms-1" style="height: 50px; position: sticky; margin-top: -170px;" *ngIf="signUpMessage">
+      <p class="w-25 text-center border bg-dark text-white p-2 rounded">{{signUpResponse}}</p>
+    </div>   
+    
+    <div class="row justify-content-center ms-1" style="height: 50px; position: sticky; margin-top: -140px;" *ngIf="loginMessage"> 
+      <p class="w-25 text-center border bg-dark text-white p-2 rounded">{{loginResponse}}</p>
+    </div> 
+
+    <!-- Login -->
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" id="body" *ngIf="showLogin">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your
+          account</h2>
+      </div>
+      <div class=" sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-4" [formGroup]="loginForm" (submit)="submitLogin()">
+          <div>
+            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
+              address</label>
+            <div class="mt-2">
+              <input formControlName="email" name="email" type="email" autocomplete="email" required
+                class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+              <div class="text-sm">
+                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot
+                  password?</a>
+              </div>
+            </div>
+            <div class="mt-2">
+              <input formControlName="password" name="password" type="password" autocomplete="current-password" required
+                class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+
+          <div>
+            <button type="submit"
+              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+              in</button>
+          </div>
+        </form>
+        <p class="mt-10 text-center text-sm" style="margin-top: 20px; color: white;">
+          Not a member?
+          <a class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500" (click)="signupBody()">Create an
+            account</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- SignUp -->
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" id="body" *ngIf="showSignup">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an account</h2>
+      </div>
+      <div class=" sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-4" [formGroup]="signupForm" (submit)="submitSignup()">
+          <div>
+            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+            <div class="mt-1">
+              <input formControlName="username" name="username" type="text" autocomplete="text" required
+                class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
+              address</label>
+            <div class="mt-2">
+              <input formControlName="email" name="email" type="email" autocomplete="email" required
+                class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+            </div>
+            <div class="mt-2">
+              <input formControlName="password" name="password" type="password" autocomplete="current-password" required
+                class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+
+          <div>
+            <button type="submit"
+              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+              up</button>
+          </div>
+        </form>
+        <p class="mt-10 text-center text-sm" style="margin-top: 20px; color: white;">
+          Already have an account?
+          <a class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500" (click)="loginBody()">Click here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid text-white" id="billing" *ngIf="showBilling" style="background-color: #212529;">
+  <!-- Apply coupon -->
+  <div class="p-5">
+    <p style="font-size: 18px;" class="mb-3">Have a Coupon?<a href="" class="btn ms-1 text-secondary">Click here to
+        enter your code</a></p>
+    <p style="font-size: 15px;">If you have a coupon code, please apply it below.</p>
+    <input type="text" class="form-control w-25 mb-2">
+    <button class="btn border" id="Btn">Apply Coupon</button>
+  </div>
+
+  <!-- Customer details form -->
+  <div class="row">
+    <div class="col-6 px-5 pb-5">
+      <form [formGroup]="dataForm">
+      <div class="row p-5">
+        <h4>Billing details</h4>
+        <div class="row my-4">
+          <div class="w-50">
+            <label for="exampleFormControlInput1" class="form-label">First name <span>*</span></label>
+            <input formControlName="firstname" name="firstname" type="text" class="form-control" id="exampleFormControlInput1">
+          </div> 
+          <div class="w-50">
+            <label for="exampleFormControlInput1" class="form-label">Last name <span>*</span></label>
+            <input formControlName="lastname" name="lastname" type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">Company name (optional)</label>
+          <input formControlName="company" name="company" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">Country / Region <span>*</span></label>
+          <input formControlName="country" name="country" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">Street address <span>*</span></label>
+          <textarea formControlName="address" name="address" class="form-control" id="exampleFormControlTextarea1" rows="3"
+            placeholder="House number and street name"></textarea>
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">State <span>*</span></label>
+          <input formControlName="state" name="state" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">District <span>*</span></label>
+          <input formControlName="district" name="district" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">Postalcode <span>*</span></label>
+          <input formControlName="postalcode" name="postalcode" type="number" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">Phone <span>*</span></label>
+          <input formControlName="phone" name="phone" type="number" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="my-4">
+          <label for="exampleFormControlInput1" class="form-label">Email address <span>*</span></label>
+          <input type="email" class="form-control" id="exampleFormControlInput1"
+            [value]="emailid" readonly>
+        </div>
+      </div>
+      <div class="row px-5">
+        <h4 class="mt-5">Additional information</h4>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Order notes (optional)</label>
+          <textarea formControlName="ordernotes" name="ordernotes" class="form-control" id="exampleFormControlTextarea1" rows="3"
+            placeholder="Notes about your order, special notes for your delivery."></textarea>
+        </div>
+      </div>
+  </form>
+    </div>
+
+    <!-- Total amount and payment method -->
+    <div class="col-6 px-5 pb-5" id="totalBill">
+
+      <div class="row m-5 px-5 rounded" style="background-color: #212529;">
+        <div class="col-6" style="float: left;">
+          <p>Check In :</p>
+          <p>Check Out :</p>
+          <p>Number of Guests :</p>
+        </div>
+        <div class="col-6 text-end" style="float: right;">
+          <p>{{viewRoomData.checkIn}}</p>
+          <p>{{viewRoomData.checkOut}}</p>
+          <p>{{viewRoomData.guests}}</p>
+        </div>
+      </div>
+
+      <div class="row mx-5 px-5 rounded" style="background-color: #212529;">
+        <h4 class="mb-4">Extra Services</h4>
+        <div class="col-6" style="float: left;">
+          <p>Room Clean × {{viewRoomData.nightClean}}</p>
+          <p>Massage × {{viewRoomData.massageCount}}</p>
+          <p>Day spa × {{viewRoomData.daySpaCount}}</p>
+        </div>
+        <div class="col-6 text-end" style="float: right;">
+          <p>${{viewRoomData.nightCleanAmt}}.00</p>
+          <p>${{viewRoomData.massageAmt}}.00</p>
+          <p>${{viewRoomData.daySpaAmt}}.00</p>
+        </div>
+      </div>
+
+      <div class="row m-5 p-5 rounded">
+        <h4 class="mb-4">Your order</h4>
+        <div class="col-6" style="float: left;">
+          <p><b>PRODUCT</b></p>
+          <p>{{viewRoomData.roomTitle}} × 1</p>
+          <p><b>Subtotal</b></p>
+          <p><b>Total</b></p>
+        </div>
+        <div class="col-6 text-end" style="float: right;">
+          <p><b>SUBTOTAL</b></p>
+          <p>${{viewRoomData.roomPrice}}.00</p>
+          <p><b>${{viewRoomData.totalAmount}}.00</b></p>
+          <p><b>${{viewRoomData.totalAmount}}.00</b></p>
+        </div>
+      </div>
+
+      <div class="row m-5 p-5 rounded">
+        <h4 class="mb-4">Payment method</h4>
+        <p><input type="radio" class="me-2" name="paymentMethod" (click)="cardPayment()">Card payment</p>
+        <div *ngIf="showPaypal" >
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+        <p><input type="radio" class="me-2" name="paymentMethod" (click)="payMeth('Cash payment')">Cash payment</p>
+        <button class="btn border mt-4 px-4 w-100" id="orderBtn" (click)="submitDataform()">Book now</button> 
+      </div>
+    </div>
+  </div>
+</div>
